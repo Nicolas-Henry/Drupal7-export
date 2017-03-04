@@ -12,7 +12,7 @@
         
   * Export the nodes
         -  Type 'articles' (a custom node : title / field_url / body / field_categories / path)
-                - You can change the code to copy another node type : lines xx to yy
+                - You can change the code to copy another node type : lines 103 to 165
 
   * WARNING 1 : this script delete all tables defined in settings.php (by default : users & articles tables) !!!
   
