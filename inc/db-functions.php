@@ -39,8 +39,13 @@ function deleteTable($table, $mysqli) {
 
 function createTable($table, $create_table_sql, $mysqli) {
     echo $create_table_sql.'<br />';
-    $result = $mysqli->query($create_table_sql);
-    return true;
+    if ($result = $mysqli->query($create_table_sql)) {
+		return true;	
+	}
+    else {
+		echo "Create table ".$table." error: (" . $mysqli->errno . ") " . $mysqli->error;
+        return false;
+	}
 }
 
 /* execute a query. If error then die(); else return $result */

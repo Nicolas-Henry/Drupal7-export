@@ -4,13 +4,13 @@
 // drupal 7 db
 // IMPORTANT : specify if possible a copy of our drupal 7 database
 $settings_db_drupal7['server']      = 'localhost';
-$settings_db_drupal7['user']        = '';
+$settings_db_drupal7['user']        = 'nicolas';
 $settings_db_drupal7['password']    = '';
 $settings_db_drupal7['database']    = 'drupal7-copy';
 
 // destination db
 $settings_db_destination['server']      = 'localhost';
-$settings_db_destination['user']        = '';
+$settings_db_destination['user']        = 'nicolas';
 $settings_db_destination['password']    = '';
 $settings_db_destination['database']    = 'db-destination';
 
@@ -24,16 +24,16 @@ $category_vid = 2;
 
 // tables structures
 $tables_create_sql['1'] = "CREATE TABLE `users` (
-  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `mail` varchar(128) NOT NULL,
-  `role` varchar(20) DEFAULT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT '0',
-  `lastlogin` datetime DEFAULT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '0',
   `numberslogin` smallint(6) NOT NULL DEFAULT '0',
+  `lastlogin` datetime DEFAULT NULL,
+  `lastaccess` datetime DEFAULT NULL,
   `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
